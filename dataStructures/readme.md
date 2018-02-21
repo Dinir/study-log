@@ -1,4 +1,5 @@
 # Associated Course
+
 [Learning Data Structures in JavaScript from Scratch][Course Link]
 
 Write more efficient & performant code by learning data structures. Be well prepared for technical interview questions.
@@ -14,6 +15,6 @@ Last updated 1/2018
 
 
 
-[Course Link]: https://www.udemy.com/learning-data-structures-in-javascript-from-scratch/ "Learning Data Structures in JavaScript from Scratch"
+[Course Link]: https://www.udemy.com/learning-data-structures-in-javascript-from-scratch/
 
 [1]: LinkedList.js
