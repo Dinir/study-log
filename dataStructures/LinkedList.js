@@ -1,3 +1,7 @@
+/*
+ the method `indexOf` is made independently.
+ */
+
 function LinkedList() {
   this.head = null;
   this.tail = null;

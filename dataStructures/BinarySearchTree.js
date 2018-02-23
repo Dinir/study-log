@@ -1,3 +1,7 @@
+/*
+ the methods `getMinVal` and `getMaxVal` is made independently.
+ */
+
 function BST(value) {
   this.value = value;
   this.left = null;
