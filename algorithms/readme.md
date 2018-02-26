@@ -21,6 +21,15 @@ Wanted to avoid using for loops but it makes more cleaner solution.
 I tried to be funny with some array methods, but the solution given by the course was much cleaner.
 - [meanMedianMode.js][7] Section 8  
 The method to get mode is the longest one in the code. The one I made was almost identical to the one the course shows, except I didn't think the case where the set is from a uniform distribution. The course says there is no mode in this case.
+- [twoSums.js][8] Section 9  
+It's discouraging to try to make my best solution when I can't understand the question exactly.
+- [binarySearch.js][9] Section 10
+- [fibonacci.js][10] Section 11, 12  
+Memoized method caches all the numbers found, and seems like using the cache anywhere in the stack.
+- [sieveOfEratosthenes.js][11] Section 13
+- [bubbleSort.js][12] Section 14
+- [mergeSort.js][13] Section 15
+- [maxStockProfit.js][14] Section 16
 
 [Course Link]: https://www.udemy.com/learning-algorithms-in-javascript-from-scratch/
 
@@ -32,3 +41,9 @@ The method to get mode is the longest one in the code. The one I made was almost
 [6]: reverseArrayInPlace.js
 [7]: meanMedianMode.js
 [8]: twoSums.js
+[9]: binarySearch.js
+[10]: fibonacci.js
+[11]: sieveOfEratosthenes.js
+[12]: bubbleSort.js
+[13]: mergeSort.js
+[14]: maxStockProfit.js
