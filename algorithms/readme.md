@@ -11,6 +11,16 @@ Last updated 1/2018
 
 # Index
 
-
+- [FizzBuzz.js][1] Section 2
+- [HarmlessRansomNote.js][2] Section 3
+- [isPalindrome.js][3] Section 4
+- [ceaserChiper.js][4] Section 5
+= [reverseWords.js][5] Section 6
 
 [Course Link]: https://www.udemy.com/learning-algorithms-in-javascript-from-scratch/
+
+[1]: FizzBuzz.js
+[2]: HarmlessRansomNote.js
+[3]: isPalindrome.js
+[4]: ceaserCipher.js
+[5]: reverseWords.js
