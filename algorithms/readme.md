@@ -28,8 +28,10 @@ It's discouraging to try to make my best solution when I can't understand the qu
 Memoized method caches all the numbers found, and seems like using the cache anywhere in the stack.
 - [sieveOfEratosthenes.js][11] Section 13
 - [bubbleSort.js][12] Section 14
-- [mergeSort.js][13] Section 15
-- [maxStockProfit.js][14] Section 16
+- [mergeSort.js][13] Section 15  
+My code was working, but too messy.
+- [maxStockProfit.js][14] Section 16  
+This is discouraging.
 
 [Course Link]: https://www.udemy.com/learning-algorithms-in-javascript-from-scratch/
 
