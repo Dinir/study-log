@@ -11,6 +11,14 @@ Last updated 2/2018
 
 # Index
 
-
+- [notes-node][1]  
+Simple command-line note taking app. 
+  - use requires to load modules
+  - use third-party modules
+  - access the file system
+  - export codes to use in other files
+  - manage parameters with `yargs`
 
 [Course Link]: https://www.udemy.com/the-complete-nodejs-developer-course-2/
+
+[1]: notes-node/
