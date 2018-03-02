@@ -1,6 +1,6 @@
 const request = require('request');
 
-const key = '*';
+const key = require('./key').key;
 
 const getWeather = (lat, lng, callback) => {
   request({
