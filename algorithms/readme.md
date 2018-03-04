@@ -42,7 +42,7 @@ This is discouraging.
 [5]: reverseWords.js
 [6]: reverseArrayInPlace.js
 [7]: meanMedianMode.js
-[8]: twoSums.js
+[8]: twoSum.js
 [9]: binarySearch.js
 [10]: fibonacci.js
 [11]: sieveOfEratosthenes.js

@@ -18,7 +18,15 @@ Simple command-line note taking app.
   - access the file system
   - export codes to use in other files
   - manage parameters with `yargs`
+- [weather-app][2]
+  - send requests and use the response with `request`
+  - use callbacks
+  - use promises
+  - wrap libraries with promises
+  - send requests with `axios` which has promises built in
 
 [Course Link]: https://www.udemy.com/the-complete-nodejs-developer-course-2/
 
 [1]: notes-node/
+[2]: weather-app/
+[3]: node-web-server/
