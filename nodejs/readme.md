@@ -30,9 +30,18 @@ Simple command-line note taking app.
   - serve dynamic pages using a template engine [`hbs`](handlebarsjs.com)
   - use 'partial' pages on templates
   - use 'helper' functions that can be used in templates
+  - use heroku
+- [node-tests][4]
+  - use [`mocha`](mochajs.org) to test codes
+  - make environment for watch and auto restart tests
+  - use custom npm scripts
+  - use assertion library [`expect`](github.com/mjackson/expect)
+  - test express applications using [`supertest`](github.com/visionmedia/supertest)
+  - test communications between codes not the actual codes using `rewire`
 
 [Course Link]: https://www.udemy.com/the-complete-nodejs-developer-course-2/
 
 [1]: notes-node/
 [2]: weather-app/
 [3]: node-web-server/
+[4]: node-tests/
