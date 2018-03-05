@@ -25,24 +25,25 @@ Simple command-line note taking app.
   - wrap libraries with promises
   - send requests with `axios` which has promises built in
 - [node-web-server][3]
-  - run a web server and handle requests, send response of JSON or HTML
+  - run a web server and handle requests, send response of JSON or HTML using [express]
   - serve static pages
-  - serve dynamic pages using a template engine [hbs][]
+  - serve dynamic pages using a template engine [hbs]
   - use 'partial' pages on templates
   - use 'helper' functions that can be used in templates
-  - use heroku
+  - use [Heroku] to deploy apps  
+  I didn't follow this one because I don't know if it's possible to deploy only some files in a git repository on Heroku.
 - [node-tests][4]
-  - use [mocha][] to test codes
+  - use [mocha] to test codes
   - make environment for watch and auto restart tests
   - use custom npm scripts
-  - use assertion library [expect][]
-  - test express applications using [supertest][]
+  - use assertion library [expect]
+  - test express applications using [supertest]
   - test communications between codes not the actual codes using `rewire` and spies
 - [node-todo-api][5]
-  - install mongodb, [node-mongodb-native][], robo3t, and learn NoSQL vocabulary ~~damn qt rendering things so ugly~~
+  - install [MongoDB], [node-mongodb-native], robo3t, and learn NoSQL vocabulary ~~damn qt rendering things so ugly~~
   - insert, fetch, remove, update in mongodb
-  - use [Mongoose ORM][]\(Object Relational Mapping) to do these things
-  - use [Postman][] to make APIs
+  - use [Mongoose ORM]\(Object Relational Mapping) to do these things
+  - use [Postman] to make APIs
   
 
 [Course Link]: https://www.udemy.com/the-complete-nodejs-developer-course-2/
@@ -53,10 +54,13 @@ Simple command-line note taking app.
 [4]: node-tests/
 [5]: node-todo-api/
 
+[express]: http://expressjs.com/en/4x/api.html
 [hbs]: http://handlebarsjs.com 'template engine that can be used with express.js'
+[Heroku]: https://heroku.com 'deploy apps'
 [mocha]: https://mochajs.org 'test codes in terminal: describe(), it()'
 [expect]: https://github.com/mjackson/expect 'an assertion libraty to expect(something).toBeA(type)'
 [supertest]: https://github.com/visionmedia/supertest 'test express applications: request(app).expect((res) => {expect(res.body).toInclude({thing: property});}).end(done);'
+[MongoDB]: https://docs.mongodb.com/
 [node-mongodb-native]: http://mongodb.github.io/node-mongodb-native/3.0/api/ 'MongoDB Node.JS Driver'
 [Mongoose ORM]: http://mongoosejs.com/docs/guide.html 'boiler plate for MongoDB'
-[Postman]: https://getpostman.com
+[Postman]: https://getpostman.com 'a client to test APIs'
