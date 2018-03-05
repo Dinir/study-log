@@ -27,20 +27,21 @@ Simple command-line note taking app.
 - [node-web-server][3]
   - run a web server and handle requests, send response of JSON or HTML
   - serve static pages
-  - serve dynamic pages using a template engine [`hbs`](handlebarsjs.com)
+  - serve dynamic pages using a template engine [hbs][]
   - use 'partial' pages on templates
   - use 'helper' functions that can be used in templates
   - use heroku
 - [node-tests][4]
-  - use [`mocha`](mochajs.org) to test codes
+  - use [mocha][] to test codes
   - make environment for watch and auto restart tests
   - use custom npm scripts
-  - use assertion library [`expect`](github.com/mjackson/expect)
-  - test express applications using [`supertest`](github.com/visionmedia/supertest)
-  - test communications between codes not the actual codes using `rewire`
+  - use assertion library [expect][]
+  - test express applications using [supertest][]
+  - test communications between codes not the actual codes using `rewire` and spies
 - [node-todo-api][5]
-  - install mongodb, [node mongodb native](http://mongodb.github.io/node-mongodb-native/3.0/api/), robo3t, and learn NoSQL ~~damn qt rendering things so ugly~~
+  - install mongodb, [node-mongodb-native][], robo3t, and learn NoSQL vocabulary ~~damn qt rendering things so ugly~~
   - insert, fetch, remove, update in mongodb
+  - use [Mongoose ORM][]\(Object Relational Mapping) to do these things
   
 
 [Course Link]: https://www.udemy.com/the-complete-nodejs-developer-course-2/
@@ -50,3 +51,10 @@ Simple command-line note taking app.
 [3]: node-web-server/
 [4]: node-tests/
 [5]: node-todo-api/
+
+[hbs]: http://handlebarsjs.com 'template engine that can be used with express.js'
+[mocha]: https://mochajs.org 'test codes in terminal: describe(), it()'
+[expect]: https://github.com/mjackson/expect 'an assertion libraty to expect(something).toBeA(type)'
+[supertest]: https://github.com/visionmedia/supertest 'test express applications: request(app).expect((res) => {expect(res.body).toInclude({thing: property});}).end(done);'
+[node-mongodb-native]: http://mongodb.github.io/node-mongodb-native/3.0/api/ 'MongoDB Node.JS Driver'
+[Mongoose ORM]: http://mongoosejs.com/docs/guide.html 'boiler plate for MongoDB'
