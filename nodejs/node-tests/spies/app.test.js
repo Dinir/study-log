@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 // spies - to test communication between functions, not the actual running of them.
 const expect = require('expect');
 const rewire = require('rewire');

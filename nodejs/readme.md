@@ -42,6 +42,7 @@ Simple command-line note taking app.
   - install mongodb, [node-mongodb-native][], robo3t, and learn NoSQL vocabulary ~~damn qt rendering things so ugly~~
   - insert, fetch, remove, update in mongodb
   - use [Mongoose ORM][]\(Object Relational Mapping) to do these things
+  - use [Postman][] to make APIs
   
 
 [Course Link]: https://www.udemy.com/the-complete-nodejs-developer-course-2/
@@ -58,3 +59,4 @@ Simple command-line note taking app.
 [supertest]: https://github.com/visionmedia/supertest 'test express applications: request(app).expect((res) => {expect(res.body).toInclude({thing: property});}).end(done);'
 [node-mongodb-native]: http://mongodb.github.io/node-mongodb-native/3.0/api/ 'MongoDB Node.JS Driver'
 [Mongoose ORM]: http://mongoosejs.com/docs/guide.html 'boiler plate for MongoDB'
+[Postman]: https://getpostman.com
