@@ -38,6 +38,10 @@ Simple command-line note taking app.
   - use assertion library [`expect`](github.com/mjackson/expect)
   - test express applications using [`supertest`](github.com/visionmedia/supertest)
   - test communications between codes not the actual codes using `rewire`
+- [node-todo-api][5]
+  - install mongodb, [node mongodb native](http://mongodb.github.io/node-mongodb-native/3.0/api/), robo3t, and learn NoSQL ~~damn qt rendering things so ugly~~
+  - insert, fetch, remove, update in mongodb
+  
 
 [Course Link]: https://www.udemy.com/the-complete-nodejs-developer-course-2/
 
@@ -45,3 +49,4 @@ Simple command-line note taking app.
 [2]: weather-app/
 [3]: node-web-server/
 [4]: node-tests/
+[5]: node-todo-api/
