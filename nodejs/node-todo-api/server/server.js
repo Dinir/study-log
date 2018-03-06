@@ -1,17 +1,18 @@
 const _ = require('lodash');
 const express = require('express');
-// `body-parser` takes your json response and conerts it to a js object
+// `body-parser` takes your json response and converts it to a js object
 const bodyParser = require('body-parser');
-
-const {mongoose} = require('./db/mongoose');
 const {ObjectID} = require('mongodb');
+
+require('./config/config');
+const {mongoose} = require('./db/mongoose');
 // tell mongoose how you want it to store documents
 // the model name will be in lowercases and pluralized to be used as a name for the collection
 const {Todo} = require('./models/todo');
 const {User} = require('./models/user');
 
 const app = express();
-const port = process.env.PORT || 3000;
+const port = process.env.PORT;
 
 // add middleware
 app.use(bodyParser.json());
