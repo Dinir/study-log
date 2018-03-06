@@ -1,3 +1,4 @@
+const _ = require('lodash');
 const express = require('express');
 // `body-parser` takes your json response and conerts it to a js object
 const bodyParser = require('body-parser');
@@ -66,6 +67,33 @@ app.delete('/todos/:id', (req, res) => {
       return res.status(200).send({todo});
     res.status(404).send();
   }, e => {
+    res.status(400).send();
+  });
+});
+
+app.patch('/todos/:id', (req, res) => {
+  const id = req.params.id;
+  // pick properties from the request body that you want the server to update
+  const body = _.pick(req.body, ['text', 'completed']);
+
+  if(!ObjectID.isValid(id))
+    return res.status(404).send();
+
+  if(_.isBoolean(body.completed) && body.completed) {
+    body.completedAt = new Date().getTime();
+  } else {
+    body.completed = false;
+    body.completedAt = null;
+  }
+
+  //
+  Todo.findByIdAndUpdate(id, {$set: body}, {new: true}).then(
+    todo => {
+      if(todo)
+        return res.status(200).send({todo});
+      res.status(404).send();
+    }
+  ).catch(e => {
     res.status(400).send();
   });
 });
