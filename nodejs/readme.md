@@ -43,7 +43,11 @@ Simple command-line note taking app.
   - install [MongoDB], [node-mongodb-native], robo3t, and learn NoSQL vocabulary ~~damn qt rendering things so ugly~~
   - insert, fetch, remove, update in mongodb
   - use [Mongoose ORM]\(Object Relational Mapping) to do these things
-  - use [Postman] to make APIs
+  - use [Postman] to make APIs  
+  use methods POST, GET, PATCH, DELETE
+  - test API endpoints
+  - separate test environments
+  
   
 
 [Course Link]: https://www.udemy.com/the-complete-nodejs-developer-course-2/
