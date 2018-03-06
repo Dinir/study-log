@@ -3,6 +3,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 
 const {mongoose} = require('./db/mongoose');
+const {ObjectID} = require('mongodb');
 // tell mongoose how you want it to store documents
 // the model name will be in lowercases and pluralized to be used as a name for the collection
 const {Todo} = require('./models/todo');
@@ -35,6 +36,21 @@ app.get('/todos', (req, res) => {
     });
   }, (e) => {
     res.status(400).send(e);
+  });
+});
+
+app.get('/todos/:id', (req, res) => {
+  const id = req.params.id;
+
+  if(!ObjectID.isValid(id))
+    return res.status(404).send();
+
+  Todo.findById(id).then(todo => {
+    if(todo)
+      return res.send({todo});
+    res.status(404).send();
+  }, e => {
+    res.status(400).send();
   });
 });
 
