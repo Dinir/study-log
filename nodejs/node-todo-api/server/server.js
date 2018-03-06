@@ -27,6 +27,16 @@ app.post('/todos', (req, res) => {
   });
 });
 
+app.get('/todos', (req, res) => {
+  Todo.find().then((todos) => {
+    // by wrapping the results in an object, you can send more information with the results
+    res.send({
+      todos
+    });
+  }, (e) => {
+    res.status(400).send(e);
+  });
+});
 
 app.listen(3000, () => {
   console.log('Started on port 3000.');
