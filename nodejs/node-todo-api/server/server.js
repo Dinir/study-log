@@ -31,6 +31,18 @@ app.post('/todos', (req, res) => {
   });
 });
 
+app.post('/users', (req, res) => {
+  const rawUserData = _.pick(req.body, ['email', 'password']);
+  const user = new User(rawUserData);
+
+  user.save().then(
+    () => user.generateAuthToken()
+  ).then(token => {
+    // you can attach the prefix `x-` for custom headers you make.
+    res.header('x-auth', token).send(user);
+  }).catch(e => res.status(400).send(e));
+});
+
 app.get('/todos', (req, res) => {
   Todo.find().then((todos) => {
     // by wrapping the results in an object, you can send more information with the results

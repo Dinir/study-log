@@ -40,13 +40,20 @@ Simple command-line note taking app.
   - test express applications using [supertest]
   - test communications between codes not the actual codes using `rewire` and spies
 - [node-todo-api][5]
-  - install [MongoDB], [node-mongodb-native], robo3t, and learn NoSQL vocabulary ~~damn qt rendering things so ugly~~
-  - insert, fetch, remove, update in mongodb
-  - use [Mongoose ORM]\(Object Relational Mapping) to do these things
-  - use [Postman] to make APIs  
-  use methods POST, GET, PATCH, DELETE
-  - test API endpoints
+  - use MongoDB
+    - install [MongoDB], [node-mongodb-native], robo3t, and learn NoSQL vocabulary ~~damn qt rendering things so ugly~~
+    - insert, fetch, remove, update in mongodb
+    - use [Mongoose ORM]\(Object Relational Mapping) to do these things
+  - make API
+    - use [Postman] to make API  
+    use methods POST, GET, PATCH, DELETE
+    - test API endpoints
   - separate test environments
+  - setup a user model
+    - use [validator][] to validate string inputs
+    - try hashing passwords with [crypto-js][]
+    - use [jwt][] to make token methods that can be used to secure the app
+  
   
   
 
@@ -60,11 +67,16 @@ Simple command-line note taking app.
 
 [express]: http://expressjs.com/en/4x/api.html
 [hbs]: http://handlebarsjs.com 'template engine that can be used with express.js'
-[Heroku]: https://heroku.com 'deploy apps'
+[validator]: https://npmjs.com/package/validator
+[crypto-js]: https://www.npmjs.com/package/crypto-js
+[jwt]: https://jwt.io/
 [mocha]: https://mochajs.org 'test codes in terminal: describe(), it()'
 [expect]: https://github.com/mjackson/expect 'an assertion libraty to expect(something).toBeA(type)'
 [supertest]: https://github.com/visionmedia/supertest 'test express applications: request(app).expect((res) => {expect(res.body).toInclude({thing: property});}).end(done);'
-[MongoDB]: https://docs.mongodb.com/
 [node-mongodb-native]: http://mongodb.github.io/node-mongodb-native/3.0/api/ 'MongoDB Node.JS Driver'
+
+[MongoDB]: https://docs.mongodb.com/
 [Mongoose ORM]: http://mongoosejs.com/docs/guide.html 'boiler plate for MongoDB'
+
+[Heroku]: https://heroku.com 'deploy apps'
 [Postman]: https://getpostman.com 'a client to test APIs'
