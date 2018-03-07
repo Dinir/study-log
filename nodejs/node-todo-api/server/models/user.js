@@ -63,6 +63,30 @@ UserSchema.methods.generateAuthToken = function() {
   return user.save().then(() => token);
 };
 
+// everything added under `.statics` will turn into model methods,
+// while ones under `.methods` will turn into instance methods.
+UserSchema.statics.findByToken = function(token) {
+  const User = this;
+  let decoded;
+
+  try {
+    decoded = jwt.verify(token, 'abc123');
+  } catch (e) {
+    // return new Promise((resolve, reject) => {
+    //   reject();
+    // });
+    // any data put inside of the parenthesis can be used in a `.catch()` call later.
+    return Promise.reject();
+  }
+
+  // when finding a document by a nested field, you need to wrap the filed with quotes.
+  return User.findOne({
+    _id: decoded._id,
+    'tokens.token': token,
+    'tokens.access': 'auth'
+  });
+};
+
 const User = mongoose.model('User', UserSchema);
 
 module.exports = {User};

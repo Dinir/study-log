@@ -10,6 +10,7 @@ const {mongoose} = require('./db/mongoose');
 // the model name will be in lowercases and pluralized to be used as a name for the collection
 const {Todo} = require('./models/todo');
 const {User} = require('./models/user');
+const {authenticate} = require('./middleware/authenticate');
 
 const app = express();
 const port = process.env.PORT;
@@ -109,6 +110,10 @@ app.patch('/todos/:id', (req, res) => {
   ).catch(e => {
     res.status(400).send();
   });
+});
+
+app.get('/users/me', authenticate, (req, res) => {
+  res.send(req.user);
 });
 
 app.listen(port, () => {
