@@ -53,6 +53,7 @@ Simple command-line note taking app.
     - use [validator][] to validate string inputs
     - try hashing passwords with [crypto-js][]
     - use [jwt][] to make token methods that can be used to secure the app
+    - [bcryptjs][]
   
   
   
@@ -67,9 +68,12 @@ Simple command-line note taking app.
 
 [express]: http://expressjs.com/en/4x/api.html
 [hbs]: http://handlebarsjs.com 'template engine that can be used with express.js'
+
 [validator]: https://npmjs.com/package/validator
 [crypto-js]: https://www.npmjs.com/package/crypto-js
 [jwt]: https://jwt.io/
+[bcryptjs]: https://www.npmjs.com/package/bcryptjs
+
 [mocha]: https://mochajs.org 'test codes in terminal: describe(), it()'
 [expect]: https://github.com/mjackson/expect 'an assertion libraty to expect(something).toBeA(type)'
 [supertest]: https://github.com/visionmedia/supertest 'test express applications: request(app).expect((res) => {expect(res.body).toInclude({thing: property});}).end(done);'
