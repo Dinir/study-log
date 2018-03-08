@@ -21,7 +21,7 @@ app.use(bodyParser.json());
 app.post('/todos', (req, res) => {
   // console.log(req.body); // `req.body` is parsed by the middleware
   const todo = new Todo({
-    text: req.body.text
+    text: req.body.text,
   });
 
   // see https://httpstatuses.com to see available status codes
@@ -37,18 +37,53 @@ app.post('/users', (req, res) => {
   const user = new User(rawUserData);
 
   user.save().then(
-    () => user.generateAuthToken()
+    () => user.generateAuthToken(),
   ).then(token => {
     // you can attach the prefix `x-` for custom headers you make.
     res.header('x-auth', token).send(user);
   }).catch(e => res.status(400).send(e));
 });
 
+/* // yes... well......
+app.post('/users/login', (req, res) => {
+  const visitor = _.pick(req.body, ['email', 'password']);
+
+  User.findOne({email: visitor.email}).then(user => {
+    if(user) {
+      bcrypt.compare(visitor.password, user.password, (err, res) => {
+        if(res) {
+          user.generateAuthToken().then(token => {
+            return res.header('x-auth', token).send(user);
+          });
+        }
+        return res.status(401).send();
+      });
+    }
+    res.status(400).send();
+  }).catch(e => res.status(400).send(e));
+});
+*/
+
+app.post('/users/login', (req, res) => {
+  const rawUserData = _.pick(req.body, ['email', 'password']);
+  User.findByCredentials(rawUserData.email, rawUserData.password)
+    .then(user => {
+      // not check if the user exist here
+      // the middleware will throw error if that's the case
+      // and the error will be handled in the `.catch` below
+      return user.generateAuthToken().then(token => {
+        res.header('x-auth', token).send(user);
+      });
+    }).catch(e => {
+      res.status(400).send();
+  });
+});
+
 app.get('/todos', (req, res) => {
   Todo.find().then((todos) => {
     // by wrapping the results in an object, you can send more information with the results
     res.send({
-      todos
+      todos,
     });
   }, (e) => {
     res.status(400).send(e);
@@ -106,7 +141,7 @@ app.patch('/todos/:id', (req, res) => {
       if(todo)
         return res.status(200).send({todo});
       res.status(404).send();
-    }
+    },
   ).catch(e => {
     res.status(400).send();
   });
