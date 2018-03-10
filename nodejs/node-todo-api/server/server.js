@@ -44,26 +44,6 @@ app.post('/users', (req, res) => {
   }).catch(e => res.status(400).send(e));
 });
 
-/* // yes... well......
-app.post('/users/login', (req, res) => {
-  const visitor = _.pick(req.body, ['email', 'password']);
-
-  User.findOne({email: visitor.email}).then(user => {
-    if(user) {
-      bcrypt.compare(visitor.password, user.password, (err, res) => {
-        if(res) {
-          user.generateAuthToken().then(token => {
-            return res.header('x-auth', token).send(user);
-          });
-        }
-        return res.status(401).send();
-      });
-    }
-    res.status(400).send();
-  }).catch(e => res.status(400).send(e));
-});
-*/
-
 app.post('/users/login', (req, res) => {
   const rawUserData = _.pick(req.body, ['email', 'password']);
   User.findByCredentials(rawUserData.email, rawUserData.password)
@@ -76,6 +56,14 @@ app.post('/users/login', (req, res) => {
       });
     }).catch(e => {
       res.status(400).send();
+  });
+});
+
+app.delete('/users/me/token', authenticate, (req, res) => {
+  req.user.removeToken(req.token).then(() => {
+    res.status(200).send();
+  }, () => {
+    res.status(400).send();
   });
 });
 
