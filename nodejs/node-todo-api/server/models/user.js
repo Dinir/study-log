@@ -50,6 +50,7 @@ UserSchema.methods.toJSON = function() {
 UserSchema.methods.generateAuthToken = function() {
   // refer to the document the schema is used for
   const user = this;
+
   const access = 'auth';
   const token = jwt.sign({
     _id: user._id.toHexString(),
@@ -97,6 +98,12 @@ UserSchema.statics.findByToken = function(token) {
   });
 };
 
+/*
+ how can bcrypt compare the password to the hash
+ when it seems like no salt was given:
+ https://stackoverflow.com/a/6832628
+ In short, the salt for each hash is stored within the hash.
+ */
 UserSchema.statics.findByCredentials = function(email, password) {
   const User = this;
   return User.findOne({email}).then(user => {
