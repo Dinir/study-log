@@ -53,7 +53,10 @@ Simple command-line note taking app.
     - use [validator][] to validate string inputs
     - try hashing passwords with [crypto-js][]
     - use [jwt][] to make token methods that can be used to secure the app
-    - [bcryptjs][]
+    - use [bcryptjs][] to hash user passwords before saving
+    - test codes that involve hashing methods
+  - add log in and log out route
+  - move secret data to a separate file
   
   
   
