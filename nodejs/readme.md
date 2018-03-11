@@ -58,9 +58,10 @@ Simple command-line note taking app.
   - add log in and log out route
   - move secret data to a separate file
 - [node-chat-app][6]  
-interactive app that connects to the server and send and receive data back and forth  
+interactive app that connects to the server and send data back and forth  
   > it was a hassle to follow with heroku related tasks when I already have this folder as a part in this repository. So I used Dropbox to sync with heroku, and put a symbolic link inside `Dropbox/Apps/Heroku`. The deployment works great, the code will be in sync with this repository. Not sure if my Dropbox space is saved though.
   - use `path.join()` to store cleaner path in strings.
+  - make the server to allow incoming websocket connections, the client to make the connection, found a persistent connection to send data back and forth. 
 
 
 [Course Link]: https://www.udemy.com/the-complete-nodejs-developer-course-2/
