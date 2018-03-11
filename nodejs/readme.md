@@ -57,9 +57,11 @@ Simple command-line note taking app.
     - test codes that involve hashing methods
   - add log in and log out route
   - move secret data to a separate file
-  
-  
-  
+- [node-chat-app][6]  
+interactive app that connects to the server and send and receive data back and forth  
+  > it was a hassle to follow with heroku related tasks when I already have this folder as a part in this repository. So I used Dropbox to sync with heroku, and put a symbolic link inside `Dropbox/Apps/Heroku`. The deployment works great, the code will be in sync with this repository. Not sure if my Dropbox space is saved though.
+  - use `path.join()` to store cleaner path in strings.
+
 
 [Course Link]: https://www.udemy.com/the-complete-nodejs-developer-course-2/
 
@@ -68,6 +70,7 @@ Simple command-line note taking app.
 [3]: node-web-server/
 [4]: node-tests/
 [5]: node-todo-api/
+[6]: node-chat-app/
 
 [express]: http://expressjs.com/en/4x/api.html
 [hbs]: http://handlebarsjs.com 'template engine that can be used with express.js'
