@@ -78,7 +78,7 @@ Simple command-line note taking app.
 [bcryptjs]: https://www.npmjs.com/package/bcryptjs
 
 [mocha]: https://mochajs.org 'test codes in terminal: describe(), it()'
-[expect]: https://github.com/mjackson/expect 'an assertion libraty to expect(something).toBeA(type)'
+[expect]: https://facebook.github.io/jest/docs/en/expect.html 'an assertion libraty to expect(something).toBeA(type)'
 [supertest]: https://github.com/visionmedia/supertest 'test express applications: request(app).expect((res) => {expect(res.body).toInclude({thing: property});}).end(done);'
 [node-mongodb-native]: http://mongodb.github.io/node-mongodb-native/3.0/api/ 'MongoDB Node.JS Driver'
 
