@@ -24,15 +24,15 @@ io.on('connection', socket => {
     console.log('User disconnected');
   });
 
-  socket.emit('newMessage', {
-    from: 'Frenz',
-    text: 'how\'s the pizza going?',
-    createdAt: new Date()
-  });
-
   socket.on('createMessage', message => {
     console.log(`New message from ${message.from}: `);
     console.log(message.text);
+    // `io.emit` emits event to every connected user
+    io.emit('newMessage', {
+      from: message.from,
+      text: message.text,
+      createdAt: new Date().getTime()
+    });
   });
 });
 
