@@ -29,14 +29,14 @@ io.on('connection', socket => {
     console.log('User disconnected');
   });
 
-  socket.on('createMessage', message => {
+  socket.on('createMessage', (message, callback) => {
     console.log(`New message from ${message.from}: `);
     console.log(message.text);
 
     // `io.emit` emits event to every connected user
-    /*io.emit('newMessage', generateMessage(message.from, message.text));*/
+    io.emit('newMessage', generateMessage(message.from, message.text));
 
-    socket.broadcast.emit('newMessage', generateMessage(message.from, message.text));
+    callback('This is from the server.');
   });
 });
 
