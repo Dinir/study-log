@@ -40,7 +40,7 @@ io.on('connection', socket => {
   });
 
   socket.on('createLocationMessage', (coords) => {
-    console.log(`New location message:`, coords);
+    console.log('New location message:', coords);
     io.emit('newLocationMessage', generateLocationMessage('Server', coords.latitude, coords.longitude));
   });
 });
