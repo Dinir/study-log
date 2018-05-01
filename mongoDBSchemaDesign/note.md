@@ -14,8 +14,6 @@ Based on these, you can pick one of the three basic One-to-N designs
 
 - Use a reference to the One-side in the N-side objects if the cardinality is one-to-squillions
 
-- - -
-
 ## detail
 
 ### One-to-Few
@@ -127,8 +125,6 @@ example of application-level join to find the most recent 5,000 messages for a h
 When deciding whether or not to denormalize, consider the following factors:
 - You cannot perform an atomic update on denormalized data
 - Denormalization only makes sense when you have a high read to write ratio
-
-- - -
 
 ## detail
 
@@ -279,15 +275,19 @@ This approach is a bad idea if you want to look at the data less frequently than
 
 # [Your guide through the rainbow][post-3]
 
-## In short
+1. favor embedding unless there is a compelling reason not to
 
+2. needing to access an object on its own is a compelling reason not to embed it
 
+3. Arrays should not grow without bound.  
+  If there are more than a couple of hundred documents on the “many” side, don’t embed them;  
+  if there are more than a few thousand documents on the “many” side, don’t use an array of ObjectID references. High-cardinality arrays are a compelling reason not to embed.
 
-- - -
+4. Don’t be afraid of application-level joins: if you index correctly and use the projection specifier (as shown in part 2) then application-level joins are barely more expensive than server-side joins in a relational database.
 
-## detail
+5. Consider the write/read ratio when denormalizing. A field that will mostly be read and only seldom updated is a good candidate for denormalization: if you denormalize a field that is updated frequently then the extra work of finding and updating all the instances is likely to overwhelm the savings that you get from denormalizing.
 
-
+6. As always with MongoDB, how you model your data depends – entirely – on your particular application’s data access patterns. You want to structure your data to match the ways that your application queries and updates it. 
 
 [post-1]: https://www.mongodb.com/blog/post/6-rules-of-thumb-for-mongodb-schema-design-part-1
 [post-2]: http://blog.mongodb.org/post/87892923503/6-rules-of-thumb-for-mongodb-schema-design-part-2
